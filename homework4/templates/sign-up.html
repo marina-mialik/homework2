@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+    <style>
+        section {
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+
+    <section>
+        <h2>Регистрация</h2>
+
+        <form method="post">
+            <div>
+                <label for="fullname">Введите Ваше имя и фамилию: </label>
+                <input type="text" name="fullname" id="fullname" value="{{ form.fullname }}" />
+            </div>
+            <div>
+                <label for="login">Введите Ваш Логин: </label>
+                <input type="text" name="login" id="login" value="{{ form.login }}" />
+            </div>
+            <div>
+                <label for="password">Введите Ваш пароль: </label>
+                <input type="password" name="password" id="password" value="{{ form.password }}" />
+            </div>
+            <div>
+                <label for="email">Введите Ваш Email: </label>
+                <input type="email" name="email" id="email" value="{{ form.email }}" required />
+            </div>
+            <div>
+                <label for="age">Введите Ваш возраст: </label>
+                <input type="number" name="age" id="age" min="12" max="100" value="{{ form.age }}" required />
+            </div>
+            <div>
+                <input type="submit" value="Зарегистрироваться" />
+            </div>
+        </form>
+
+        {% if errors %}
+            <h2>Ошибки</h2>
+            {% for error_name in errors %}
+                <p>{{ errors[error_name] }}</p>
+            {%endfor%}
+        {% endif %}
+    </section>
+{% endblock %}

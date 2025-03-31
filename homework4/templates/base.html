@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        html {
+            display: flex;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            background: #e9e9e9;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            overflow: hidden auto;
+        }
+    </style>
+</head>
+<body>
+    {% if user %}
+        <h1> Приветствуем вас {{ user.fullname }}</h1>
+    {% endif %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

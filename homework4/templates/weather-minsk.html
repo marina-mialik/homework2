@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Погода в {{ city }}
+{% endblock %}
+
+{% block content %}
+    <style>
+        article {
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+
+    <article>
+        <h2>{{ city }}</h2>
+        <p> Статус: {{ weather.status }}</p>
+        <p> Температура в F: {{ weather.temperature.temp }}</p>
+        <p> Ощущается как: {{ weather.temperature.feels_like }}</p>
+    </article>
+{% endblock %}
