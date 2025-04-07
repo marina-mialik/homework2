@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 5</title>
+    <style>
+      .poem {
+        display: block;
+        max-width: max-content;
+        text-align: center;
+      }
+
+      section {
+        width: max-content;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: center;
+      }
+
+      table {
+        padding: 0;
+      }
+
+      .colorfull-table {
+        border-collapse: collapse;
+        border-bottom: 2px solid #000;
+        border-top: 2px solid #000;
+    }
+
+    .colorfull-table thead {
+        background: rgb(192, 103, 103);
+    }
+
+    .colorfull-table td {
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+
+    .colorfull-table tr:nth-child(even) {
+        background: rgb(205, 133, 50);
+    }
+
+    .colorfull-table td, .colorfull-table th {
+        padding: 5px;
+    }
+
+    .colorfull-table-td td {
+        border: 1px solid #000;
+        text-align: center;
+    }
+
+    .colorfull-table-td tr:nth-child(even) {
+        background: transparent;
+    }
+    
+    .colorfull-table-td tbody td:nth-child(even) {
+        background: rgb(50, 202, 205);
+    }
+
+    .colorfull-table-td thead {
+        background: rgb(133, 129, 130);
+    }
+
+    .chemisty {
+        border: none;
+    }
+
+    .chemisty * {
+        border: none;
+    }
+
+    label {
+        display: inline-block;
+        width: 100px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 200px;
+    }
+
+    textarea {
+        vertical-align: top;
+    }
+
+    input[type="checkbox"] {
+        width: min-content;
+    }
+    </style>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <section>
+        <h2>Joy of T<sub>E</sub>X</h2>
+      </section>
+
+      <section class="poem">
+        <h2>Евгений Евтушенко</h2>
+        <p style="text-align: center">— 1955 —</p>
+
+        <pre>
+Бывало, спит у ног собака,
+костер занявшийся гудит,
+и женщина из полумрака
+глазами зыбкими глядит.
+
+Потом под пихтою приляжет
+на куртку рыжую мою
+и мне, 
+        задумчивая,
+                    скажет:
+«А ну-ка, спой!..» —
+                и я пою.
+        </pre>
+      </section>
+      <section>
+        <p style="text-align: center">Добыча драгоценных камней</p>
+        <table>
+          <thead>
+            <tr class="bold">
+              <td></td>
+              <td><b>2010</b></td>
+              <td><b>2012</b></td>
+              <td><b>2014</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Сапфиры</td>
+              <td rowspan="2">1483</td>
+              <td>4532</td>
+              <td>6743</td>
+            </tr>
+            <tr>
+              <td>Рубины</td>
+              <td>3835</td>
+              <td>7482</td>
+            </tr>
+            <tr>
+              <td>Алмазы</td>
+              <td>683</td>
+              <td colspan="2">238</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <p style="text-align: center;">Цветная таблица</p>
+        <table class="colorfull-table" >
+          <thead>
+            <tr>
+              <td></td>
+              <td>2004</td>
+              <td>2005</td>
+              <td>2006</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Рубины</td>
+              <td>43</td>
+              <td>51</td>
+              <td>79</td>
+            </tr>
+            <tr>
+              <td>Изумруды</td>
+              <td>28</td>
+              <td>34</td>
+              <td>48</td>
+            </tr>
+            <tr>
+              <td>Сапфиры</td>
+              <td>29</td>
+              <td>57</td>
+              <td>36</td>
+            </tr>
+            <tr>
+              <td>Аметисты</td>
+              <td>23</td>
+              <td>64</td>
+              <td>97</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <p style="text-align: center;">Цветная таблица</p>
+<table class="colorfull-table colorfull-table-td">
+    <thead>
+        <tr>
+            <td>Название</td>
+            <td>Цвет</td>
+            <td>Твердость по Моосу</td>
+            <td>Формула</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Алмазы</td>
+            <td>Белый</td>
+            <td>10</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>Рубин</td>
+            <td>Красный</td>
+            <td>9</td>
+            <td>AI<sub>2</sub>O<sub>3</td>
+        </tr>
+        <tr>
+            <td>Аметист</td>
+            <td>Голубой</td>
+            <td>7</td>
+            <td>SiO<sub>2</sub></td>
+        </tr>
+        <tr>
+            <td>Изумруд</td>
+            <td>Зеленый</td>
+            <td>8</td>
+            <td>Be<sub>3</sub>AI<sub>2</sub>(SiO<sub>3</sub>)<sub>6</td>
+        </tr>
+        <tr>
+            <td>Сапфир</td>
+            <td>Голубой</td>
+            <td>9</td>
+            <td>AI<sub>2</sub>O<sub>3</td>
+        </tr>
+    </tbody>
+</table>
+      </section>
+      <section>
+        <h2>Карта сокровищ</h2>
+        <hr />
+        <img title="Клад" src="https://img.freepik.com/premium-vector/map-treasures-paper-parchment_8071-3421.jpg" alt="map">
+        <p>Пройдено  <progress style="accent-color: green;" value="40" max="100"></progress></p>
+        <hr>
+      </section>
+      <section>
+        <h2>Химические элементы</h2>
+
+<hr>
+
+<table cellspacing="0" cellpadding="0" class="chemisty">
+    <thead>
+        <tr class="bold">
+            <td>Номер</td>
+            <td>Название</td>
+            <td>Символ</td>
+            <td>Год</td>
+            <td>Статья</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B4">Водород</a></td>
+            <td><b>B</b></td>
+            <td>1766</td>
+            <td><a href="test.txt" download>&#x270E;</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9">Гелий</a></td>
+            <td><b>He</b></td>
+            <td>1895</td>
+            <td><a href="test.txt" download>&#x270E;</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)">Бор</a></td>
+            <td><b>B</b></td>
+            <td>1808</td>
+            <td><a href="test.txt" download>&#x270E;</a></td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+      </section>
+      <section>
+        <h2>Генераторы</h2>
+
+<ul>
+    <li>
+      Цвета
+      <ul>
+        <li>Color Mixers</li>
+        <li>Color Tester</li>
+        <li>Color Pallete</li>
+      </ul>
+    </li>
+    <li>
+        Фавиконы
+        <ol>
+            <li>
+                Favicon.cc
+                <ul style="list-style-type:square;">
+                    <li><a href="test.txt" download>Скачать</a></li>
+                    <li><a href="test.txt" download>Демо</a></li>
+                  </ul>
+            </li>
+            <li>WebLab Favicon</li>
+          </ol>
+
+    </li>
+    <li>
+        Фоны
+        <ul>
+            <li>BgMaker</li>
+            <li>StripeGenerator</li>
+          </ul>
+    </li>
+    <li>
+        Изображения
+        <ol>
+            <li>Buttonator</li>
+            <li>AjaxLoad</li>
+          </ol>
+    </li>
+  </ul>
+      </section>
+      <section>
+        <h2>Стихотворение</h2>
+
+<pre>
+Мириады маленьких дел
+Пьют по капле гаснущий день,
+А <i>дела большие </i> сушит жажда.
+Оставляя всё на «потом»,
+Прозреваем задним числом,
+Только день <b>не повторится</b> дважды.
+
+И. Тальков
+</pre>
+      </section>
+      <section>
+        <h1>Заголовок первого уровня </h1>
+  <h2>Загаловок второго уровня</h2>
+  <h3>Загаловок третьего уровня</h3>
+
+  <p>Пример ссылки <a href="https://www.youtube.com/watch?v=iHMpPoW_-us&ab_channel=FanofPets" target="_blank">ведущей на другую страницу</a></p>
+      </section>
+      <section>
+        Неделя: <input type="week"> <br><br>
+        Дата и время: <input type="datetime-local"> <br><br>
+        Месяц: <input type="month"> <br><br>
+        Время: <input type="time"> <br><br>
+        <input type="submit"><br><br>
+      </section>
+
+      <section>
+        <h2>Форма заявки на работу в зоопарке</h2>
+        <p><i>Пожалуйста заполите форму. Обязательные поля отмечены <sup style="color: red;">*</sup></i></p>
+
+        <form method="POST">
+            <fieldset>
+                <legend style="text-transform: uppercase;">контактная информация</legend>
+            
+                <label for="name">Имя <sup style="color: red;">*</sup></label>
+                <input type="text" id="name" name="name" required /><br><br>
+
+                <label for="tel">Телефон</label>
+                <input type="tel" id="tel" name="tel" /><br><br>
+            
+                <label for="email">Email <sup style="color: red;">*</sup></label>
+                <input type="email" id="email" name="enail" required />
+              </fieldset><br><br>
+
+              <fieldset>
+                <legend style="text-transform: uppercase;">персональная информация</legend>
+            
+                <label for="age">Возраст <sup style="color: red;">*</sup></label>
+                <input type="number" min="18" max="120" id="age" name="age" required /><br><br>
+
+                <label for="sex">Пол</label>
+                <select name="sex" id="sex">
+                    <option value="man">Мужчина</option>
+                    <option value="woman" selected="selected">Женщина</option>
+                </select><br><br>
+            
+                <label for="text">Перечислите<br>личные<br>качества</label>
+                <textarea name="text" id="text"></textarea>
+              </fieldset><br><br>
+
+              <fieldset>
+                <legend style="text-transform: uppercase;">выберите ваших любимых животных</legend>
+            
+                <div>
+                    <input type="checkbox" value="zebra" id="zebra" />
+                    <label for="zebra">Зебра</label>
+
+                    <input type="checkbox" value="cat" id="cat" />
+                    <label for="cat">Кошак</label>
+
+                    <input type="checkbox" value="snake" id="snake" />
+                    <label for="snake">Анаконда</label>
+
+                    <input type="checkbox" value="human" id="human" />
+                    <label for="human">Человек</label>
+                </div><br><br>
+                <div>
+                    <input type="checkbox" value="elephant" id="elephant" />
+                    <label for="elephant">Слон</label>
+
+                    <input type="checkbox" value="antilop" id="antilop" />
+                    <label for="antilop">Антилопа</label>
+
+                    <input type="checkbox" value="pegiot" id="pegiot" />
+                    <label for="pegiot">Голубь</label>
+
+                    <input type="checkbox" value="crab" id="crab" />
+                    <label for="crab">Краб</label>
+                </div>
+              </fieldset><br><br>
+
+              <button>Отправить информацию</button>
+        </form>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

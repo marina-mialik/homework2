@@ -33,13 +33,37 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            width: 500px;
-            height: 500px;
+            width: 600px;
+            height: 600px;
             padding: 10px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
             overflow: hidden auto;
+        }
+
+        .back {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            min-height: 55px;
+            padding: 10px;
+            color: #2c87ff;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            border: 2px solid #2c87ff;
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+        }
+
+        .back:hover {
+            background: #2c87ff;
+            color: white;
         }
     </style>
 </head>
@@ -51,5 +75,8 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+    <footer>
+        <a href="/" class="back">Вернуться на главную страницу</a>
+    </footer>
 </body>
 </html>

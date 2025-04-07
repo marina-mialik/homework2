@@ -197,6 +197,10 @@ def sign_out():
     session.pop('user', None)
     return redirect(url_for('sign_in'))
 
+@app.route("/homework-5/")
+def homework():
+     return render_template('homework-5.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error.html', error=error)
