@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'grid.html' %}
 
 {% block title %}
     Погода в {{ city }}
 {% endblock %}
 
-{% block content %}
+{% block main %}
     <style>
-        article {
+        .weather {
             flex: auto;
             display: flex;
             flex-direction: column;
@@ -21,7 +21,7 @@
         }
     </style>
 
-    <article>
+    <article class="weather">
         <h2>{{ city }}</h2>
         <p> Статус: {{ weather.status }}</p>
         <p> Температура в С: {{ weather.temperature.temp }}</p>

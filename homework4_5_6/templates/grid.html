@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header>
+            {% if user %}
+                <h1 class="title"> Приветствуем вас {{ user.fullname }}</h1>
+            {% endif %}
+
+
+            {% if user %}
+                <a class="link" href="/sign-out">Выйти</a>
+            {% else %}
+                <a class="link" href="/sign-in">Войти</a>
+                <a class="link" href="/sign-up">Регистрация</a>
+            {% endif %}
+        </header>
+
+        <aside>
+            <article class="container">
+                <h2>Выберите, что вы бы хотели посмотреть</h2>
+
+                <a class="link" href="/duck">Рандомная уточка</a>
+                <a class="link" href="/fox">Рандомная лисичка</a>
+                <a class="link" href="/photos">Что-то мое</a>
+                <a class="link" href="/weather-minsk">Погода в Минске</a>
+                <a class="link" href="/weather">Погода в другом городе</a>
+                <a class="link" href="/homework-5">HTML задания</a>
+            </article>
+        </aside>
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer>
+            <svg class="human" width="100" height="100" viewBox="0 0 24 24">
+                <path d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" />
+            </svg>
+        </footer>
+    </div>
+</body>
+</html>

@@ -32,7 +32,11 @@ config_dict = get_default_config()
 config_dict['language'] = 'ru'
 owm = OWM('f7ab670dd123e8e33a8296b1d5ebf253', config_dict)
 
-app = Flask(__name__)
+BASE_FOLDER = os.path.dirname(__file__)
+
+app = Flask(__name__,
+            static_folder=os.path.join(BASE_FOLDER, "static"),
+            template_folder=os.path.join(BASE_FOLDER, "templates"))
 app.config['SECRET_KEY'] = os.urandom(39).hex()
 
 users = {}
@@ -199,7 +203,7 @@ def sign_out():
 
 @app.route("/homework-5/")
 def homework():
-     return render_template('homework-5.html')
+    return render_template('homework-5.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -207,6 +211,9 @@ def page_not_found(error):
 
 @app.before_request
 def check_auth():
+    if request.path.startswith('/static/'):
+        return
+
     if request.endpoint in ['sign_in', 'sign_up'] and session.get('user'):
         return redirect(url_for('index'))
 
