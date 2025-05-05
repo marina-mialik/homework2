@@ -1,0 +1,84 @@
+.button {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 70px;
+  min-height: 50px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  outline: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.button:hover {
+  color: #ffffff;
+  background: #000000;
+}
+
+.button:focus {
+  outline: 1px solid #000000;
+}
+
+.button:active {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6) inset;
+}
+
+.button--success {
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.button--success:hover {
+  color: var(--white);
+  background: var(--green);
+}
+
+.button--success:active {
+  box-shadow: 0px 0px 10px 1px var(--green-opacity) inset;
+}
+
+.button--success:focus {
+  outline: 1px solid var(--green);
+}
+
+.button--alert {
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.button--alert:hover {
+  color: var(--white);
+  background: var(--red);
+}
+
+.button--alert:active {
+  box-shadow: 0px 0px 10px 1px var(--red-opacity) inset;
+}
+
+.button--alert:focus {
+  outline: 1px solid var(--red);
+}
+
+.button--info {
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.button--info:hover {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.button--info:active {
+  box-shadow: 0px 0px 10px 1px var(--blue-opacity) inset;
+}
+
+.button--info:focus {
+  outline: 1px solid var(--blue);
+}

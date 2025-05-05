@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if quiz_id %}
+    <form class="create app__content" method="post" action="{{ url_for('create') }}">
+        <h2 class="title create__title">Creating...</h2>
+
+        <div class="create__container">
+            <input
+                class="create__input"
+                type="text"
+                value="{{quiz.name}}"
+                placeholder="Type a Quiz name..."
+                name="name"
+            >
+            <input
+                class="create__input"
+                type="text"
+                value="{{quiz.description}}"
+                placeholder="Type a Quiz description..."
+                name="description"
+            >
+        </div>
+
+        {% for question in quiz.questions %}
+            <div class="create__container">
+                <input
+                    class="create__input create__input--question"
+                    type="text"
+                    placeholder="Type a Question..."
+                    value="{{question.text}}"
+                    name="question:{{question.id}}"
+                >
+
+                <div class="create__container create__container--row">
+                    {% for option in question.options %}
+                        <div class="create__group">
+                            <input
+                                class="create__input create__input--option"
+                                type="text"
+                                value="{{option.text}}"
+                                placeholder="Type an Option..."
+                                name="option:{{question.id}}:{{option.id}}"
+                            >
+
+                            {% if option.is_correct %}
+                                <input
+                                    class="create__input-radio"
+                                    type="radio"
+                                    name="answer:{{question.id}}"
+                                    value="{{option.id}}"
+                                    checked
+                                >
+                            {% else %}
+                                <input
+                                    class="create__input-radio"
+                                    type="radio"
+                                    name="answer:{{question.id}}"
+                                    value="{{option.id}}"
+                                >
+                            {% endif %}
+                        </div>
+                    {%endfor%}
+                </div>
+            </div>
+        {%endfor%}
+
+        <div class="create__actions">
+            <button class="button button--info create__button" name="add" value="add">Add an Question</button>
+            <button class="button button--success create__button" name="create" value="create">Create a Quiz</button>
+            <button class="button button--alert create__button" name="cancel" value="cancel">Cancel</button>
+        </div>
+    </form>
+    {% else %}
+    <div class="create__container create__container--center">
+        <h2 class="title">The Quiz {{ quiz.name }} - has been created</h2>
+        <a href="/" class="link link--info subtitle create__button">Go Gome</a>
+    </div>
+    {% endif %}
+{% endblock %}

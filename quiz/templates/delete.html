@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}    
+    <form class="delete app__content" method="post" action="{{ url_for('delete', quiz_id=quiz.id) }}">
+        <div class="delete__container">
+            {% if quiz_id %}
+                <h2 class="title">Are you sure to <b>delete</b> the Quiz - {{ quiz.name }}?</h2>
+
+                <div class="delete__action">
+                    <input type="submit" name="yes" class="button button--alert delete__button" value="Yes, defenetly!">
+                    <input type="submit" name="no" class="button button--info delete__button" value="No...">
+                </div>
+            {% else %}
+                <h2 class="title">The Quiz {{ quiz.name }} - has been deleted</h2>
+
+                <div class="delete__action">
+                    <a href="/" class="link link--info subtitle delete__button">Go Gome</a>
+                </div>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}

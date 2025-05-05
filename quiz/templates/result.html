@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}    
+    <article class="delete app__content" method="post" action="{{ url_for('delete', quiz_id=quiz.id) }}">
+        <div class="delete__container">
+            <h2 class="title">{{ quiz.name }}</h2>
+            <p class="subtitle">You result is <b>{{ result }}</b></p>
+            <a href="/" class="link subtitle">Go Home</a>
+        </div>
+    </article>
+{% endblock %}

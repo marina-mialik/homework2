@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/image.svg') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <div class="app__inner">
+        <header class="app__header">
+          <h1 class="title app__title">Quiz</h1>
+
+          {% if 'create' not in request.path %}
+          <nav class="nav app__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/" class="link link--info subtitle nav__link">Quizzes</a>
+              </li>
+              <li class="nav__item">
+                <a href="{{ url_for('create') }}" class="link subtitle nav__link">Create</a>
+              </li>
+            </ul>
+          </nav>
+          {% endif %}
+        </header>
+
+        <main class="app__body">
+          {% block content %}
+            <article class="app__content app__content--no-content">
+              <h2 class="subtitle">There are no Quizzes...</h2>
+              <p class="text">Fortunetly you can create a quiz!</p>
+              <a href="{{ url_for('create') }}" class="link subtitle app__link app__link--no-content">Create</a>
+            </article>
+          {% endblock %}           
+        </main>
+
+        <footer class="search app__footer">
+          <input type="text" placeholder="Search..." id="search-input" class="search__input" />
+          <button type="button" id="search-button" class="button search__button">Search</button>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

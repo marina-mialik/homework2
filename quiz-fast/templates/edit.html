@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if quiz_id %}
+        <form class="edit app__content" method="post" action="{{ url_for('edit', quiz_id=quiz.id) }}">
+            <h2 class="title edit__title">Editing...</h2>
+
+            <div class="edit__container">
+                <input class="edit__input" type="text" value="{{quiz.name}}" name="name">
+                <input class="edit__input" type="text" value="{{quiz.description}}" name="description">
+            </div>
+
+            {% for question in quiz.questions %}
+                <div class="edit__container">
+                    <input
+                        class="edit__input edit__input--question"
+                        type="text"
+                        value="{{question.text}}"
+                        name="question:{{question.id}}"
+                        required
+                    >
+
+                    <div class="edit__container edit__container--row">
+                        {% for option in question.options %}
+                            <div class="edit__group">
+                                <input
+                                    class="edit__input edit__input--option"
+                                    type="text"
+                                    value="{{option.text}}"
+                                    name="option:{{option.id}}"
+                                    required
+                                >
+
+                                {% if option.is_correct %}
+                                    <input
+                                        class="edit__input-radio"
+                                        type="radio"
+                                        name="answer:{{question.id}}"
+                                        value="{{option.id}}"
+                                        checked
+                                        required
+                                    >
+                                {% else %}
+                                    <input
+                                        class="edit__input-radio"
+                                        type="radio"
+                                        name="answer:{{question.id}}"
+                                        value="{{option.id}}"
+                                        required
+                                    >
+                                {% endif %}
+                            </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            {%endfor%}
+
+            <button class="button button--success edit__button">Edit</button>
+        </form>
+    {% else %}
+        <div class="edit__content">
+            <h2 class="title">The Quiz {{ quiz.name }} - has been edited</h2>
+
+            <div class="delete__action">
+                <a href="/" class="link link--info subtitle delete__button">Go Gome</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

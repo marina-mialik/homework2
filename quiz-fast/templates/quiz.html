@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if quiz %}
+        <div class="app__content quiz">
+            <header class="quiz__header">
+                <article class="quiz__title">
+                    <h2 class="title">{{ quiz.name }}</h2>
+                    <p class="text">{{ quiz.description }}</p>
+                </article>
+                <div class="quiz__actions">
+                    <a href="{{ url_for('edit', quiz_id=quiz.id) }}" class="button button--success">Edit</a>
+                    <a href="{{ url_for('delete', quiz_id=quiz.id) }}" class="button button--alert">Delete</a>
+                </div>
+            </header>
+            <section class="quiz__content quiz__content--start-quiz">
+                <h3 class="subtitle">Start the <b>Quiz</b></h3>
+                <a href="{{ url_for('question', quiz_id=quiz.id) }}" class="link link--info quiz__link">Go Quiz</a>
+            </section>
+        </div>
+    {% else %}
+        <article class="app__content app__content--no-content">
+            <h2 class="subtitle">There is no such <b>Quiz</b> here...</h2>
+            <a href="/" class="link subtitle app__link app__link--no-content">Go Home</a>
+        </article>
+    {% endif %}
+{% endblock %}

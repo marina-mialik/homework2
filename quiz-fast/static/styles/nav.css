@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  display: inherit;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav__item {
+  display: inherit;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  font-size: 1.25rem;
+}

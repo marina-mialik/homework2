@@ -1,0 +1,67 @@
+.edit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit__content {
+    flex: auto;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.edit__title {
+    padding-bottom: 15px;
+}
+
+.edit__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit__container--row {
+    flex-direction: row;
+}
+
+.edit__input {
+    flex: auto;
+    display: flex;
+    height: 55px;
+    padding: 10px 40px 10px 10px;
+    border: 2px solid var(--black);
+    border-radius: 10px;
+}
+
+.edit__input--question {
+    border-color: var(--green);
+}
+
+.edit__input--option {
+    border-color: var(--blue);
+}
+
+.edit__group {
+    position: relative;
+    flex: auto;
+    display: flex;
+}
+
+.edit__input-radio {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) scale(1.5);
+    position: absolute;
+    z-index: 2;
+}
+
+.edit__button {
+    flex: 0 0 55px;
+    position: sticky;
+    bottom: 0px;
+    z-index: 3;
+}

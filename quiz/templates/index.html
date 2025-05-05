@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for quiz in quizzes %}
+        <section class="article app__article">
+            <header class="article__header">
+            <div class="article__inner article__inner--col">
+                <h2 class="title article__title">{{ quiz.name }}</h2>
+            </div>
+            <div class="article__inner">
+                <img src="{{ url_for('static', filename='images/image.svg') }}" alt="Quiz image" class="article__image">
+            </div>
+            </header>
+            <article class="text article__content">
+                {{ quiz.description }}
+            </article>
+            <footer class="article__footer">
+            <div class="article__inner article__inner--full-height article__inner--gap">
+                <a href="{{ url_for('edit', quiz_id=quiz.id) }}" class="button button--success">Edit</a>
+                <a href="{{ url_for('delete', quiz_id=quiz.id) }}" class="button button--alert">Delete</a>
+            </div>
+            <div class="article__inner article__inner--full-height">
+                <a href="{{ url_for('quiz', quiz_id=quiz.id) }}" class="link link--info">Go Quiz</a>
+            </div>
+            </footer>
+        </section>
+    {%endfor%}
+{% endblock %}

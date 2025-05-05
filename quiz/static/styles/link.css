@@ -1,0 +1,52 @@
+.link {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 70px;
+  min-height: 50px;
+  max-height: fit-content;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #ffffff;
+  background: #000000;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.link:hover {
+  color: #000000;
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+.link:focus {
+  outline: 1px solid #000000;
+}
+
+.link:active {
+  box-shadow: 0px 0px 10px 1px var(--black-opacity) inset;
+}
+
+.link--info {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.link--info:hover {
+  color: var(--blue);
+  background: var(--white);
+  border: 1px solid var(--blue);
+}
+
+.link--info:focus {
+  outline: 1px solid var(--blue);
+}
+
+.link--info:active {
+  box-shadow: 0px 0px 10px 1px var(--blue-opacity) inset;
+}

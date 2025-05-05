@@ -1,0 +1,80 @@
+.create {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create__content {
+    flex: auto;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.create__title {
+    padding-bottom: 15px;
+}
+
+.create__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.create__container--center {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.create__container--row {
+    flex-direction: row;
+}
+
+.create__input {
+    flex: auto;
+    display: flex;
+    height: 55px;
+    padding: 10px 40px 10px 10px;
+    border: 2px solid var(--black);
+    border-radius: 10px;
+}
+
+.create__input--question {
+    border-color: var(--green);
+}
+
+.create__input--option {
+    border-color: var(--blue);
+}
+
+.create__group {
+    position: relative;
+    flex: auto;
+    display: flex;
+}
+
+.create__input-radio {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) scale(1.5);
+    position: absolute;
+    z-index: 2;
+}
+
+.create__actions {
+    flex: 0 0 55px;
+    position: sticky;
+    display: flex;
+    bottom: 0;
+    gap: 15px;
+    z-index: 3;
+}
+
+.create__button {
+    flex: auto;
+    bottom: 0px;
+}

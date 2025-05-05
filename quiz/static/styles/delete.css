@@ -1,0 +1,12 @@
+.delete {
+    display: flex;
+}
+
+.delete__container {
+    flex: auto;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}

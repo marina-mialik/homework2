@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if question %}
+        <form class="app__content question" method="post" action="{{ url_for('question', quiz_id=quiz_id) }}">
+            <header class="question__header">
+                <h2 class="title">{{ question.text }}</h2>
+            </header>
+
+            <section class="question__content">
+                {% for option in question.options %}
+                    <div class="question__option">
+                        <input class="subtitle question__input" type="radio" id="{{option.id}}" name="{{question.id}}" value="{{option.id}}" required>
+                        <label class="subtitle question__label" for="{{option.id}}">{{ option.text }}</label>
+                    </div>
+                {%endfor%}
+            </section>
+
+            <footer class="question__footer">
+                <button class="button button--success question__button">Go Next</button>
+            </footer>
+        </form>
+    {% else %}
+        <article class="app__content app__content--no-content">
+            <h2 class="subtitle">There is no such <b>Question</b> here...</h2>
+            <a href="/" class="link subtitle app__link app__link--no-content">Go Home</a>
+        </article>
+    {% endif %}
+{% endblock %}
